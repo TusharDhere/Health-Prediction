@@ -1,0 +1,30 @@
+# ─────────────────────────────────────────────────────────────────
+#  render.yaml — MIRA Infrastructure as Code
+#  Drop this file in your repo root. Render auto-detects it.
+#  https://render.com/docs/blueprint-spec
+# ─────────────────────────────────────────────────────────────────
+
+services:
+  - type: web
+    name: mira-health-app
+    runtime: python
+    region: oregon          # change to: frankfurt, singapore, ohio
+    plan: free              # upgrade to starter ($7/mo) for persistent disk
+
+    buildCommand: bash build.sh
+    startCommand: bash start.sh
+
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true   # Render auto-generates a secure random value
+      - key: DATA_DIR
+        value: /data
+      - key: PYTHON_VERSION
+        value: "3.11.0"
+
+    disk:
+      name: mira-data
+      mountPath: /data        # SQLite db lives here — survives redeploys
+      sizeGB: 1               # free plan supports 1 GB
+
+    healthCheckPath: /health
