@@ -1,0 +1,22 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+backend/venv
+backend/*.egg-info
+backend/mira.db
+
+# Node
+frontend/node_modules
+frontend/build
+
+# Dev files
+*.md
+*.bat
+*.sh
+!build.sh
+!start.sh
