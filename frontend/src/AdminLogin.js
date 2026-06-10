@@ -49,7 +49,6 @@ export default function AdminLogin({ onLogin }) {
             {busy ? <><span className="spinner" /> Signing in…</> : "Sign In"}
           </button>
         </form>
-        <p className="login-hint">Default: admin / admin123</p>
       </div>
     </div>
   );
