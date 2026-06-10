@@ -1,0 +1,20 @@
+{
+  "features": [
+    "glucose",
+    "haemoglobin",
+    "cholesterol",
+    "glucose_hb_ratio",
+    "chol_hb_ratio",
+    "glucose_norm",
+    "hb_norm",
+    "chol_norm",
+    "composite_risk_score"
+  ],
+  "labels": {
+    "0": "Healthy \u2013 all values within normal range.",
+    "1": "Diabetes Risk \u2013 elevated glucose detected.",
+    "2": "Anaemia Risk \u2013 low haemoglobin detected.",
+    "3": "Dyslipidaemia Risk \u2013 high cholesterol detected.",
+    "4": "High Composite Risk \u2013 multiple abnormal values detected."
+  }
+}
