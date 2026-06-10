@@ -666,8 +666,8 @@ def export_pdf(pid):
 def seed_admin():
     try:
         if not AdminUser.query.filter_by(username="admin").first():
-            pw_hash = bcrypt.hashpw(b"admin123", bcrypt.gensalt()).decode()
-            admin = AdminUser(username="admin", password_hash=pw_hash)
+            pw_hash = bcrypt.hashpw(b"Mohini123", bcrypt.gensalt()).decode()
+            admin = AdminUser(username="administrator", password_hash=pw_hash)
             db.session.add(admin)
             db.session.commit()
             print("✅ Default admin created: username=admin, password=admin123")
